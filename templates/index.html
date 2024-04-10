@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center text-4xl text-gray-900"><a href="/">Find An Estate</a></h1>
+<a href="/add-estate/" class="text-blue-500 font-semibold">
+  Create a new listing
+</a>
+
+{% for detail in appart_details %}
+
+<div class="mt-5 px-3 py-2 bg-gray-100 rounded-sm">
+  <h3 class="text-2xl text-gray-900">{{ detail.title }}</h3>
+    <h3>
+      <a href="moreInfo/{{ detail.id }}" class="text-blue-500">View more details</a>
+    </h3>
+</div>
+
+{% endfor %}
+
+{% endblock %}

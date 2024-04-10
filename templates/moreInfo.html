@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center text-4xl">More Detail</h1>
+
+<a href="/" class="p-4 text-blue-500">
+  Home Page
+</a>
+
+<div class="px-3 py-2 bg-gray-100 rounded-sm">
+  <h3 class="text-3xl text-gray-900">{{ read.title }}</h3>
+  <p class="text-gray-900">{{ read.price }} €</p>
+  <p class="text-gray-900">{{ read.number_of_bathroom }}</p>
+  <p class="text-gray-600 text-sm">{{ read.address }}</p>
+
+  {% if request.user.is_staff %}
+  <div class="mt-5 py-5 border-t border-gray-200">
+    <a href="/moreInfo/{{ read.id }}/edit/" class="text-green-500">
+      Edit
+    </a>
+    <a href="/moreInfo/{{ read.id }}/delete/" class="ml-5 text-red-600 ">
+      Delete
+    </a>
+  </div>
+  {% endif %}
+</div>
+
+{% endblock content %}

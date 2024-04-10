@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="text-4xl text-center text-gray-900 p-5">Create a new listing</h1>
+<a href="/" class="p-4 text-blue-500">
+  Home Page
+</a>
+<form method="post" class="bg-gray-200 p-10 rounded-xl text-black text-1xl">
+  {% csrf_token %}
+  {{ new.as_p }}
+  <button type="submit" class="mt-5 mx-auto px-4 py-2  font-bold rounded-full bg-blue-400">CREATE</button>
+</form>
+
+{% endblock content %}
