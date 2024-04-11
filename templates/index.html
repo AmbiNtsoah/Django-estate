@@ -10,9 +10,10 @@
 
 <div class="mt-5 px-3 py-2 bg-gray-100 rounded-sm">
   <h3 class="text-2xl text-gray-900">{{ detail.title }}</h3>
-    <h3>
+      {% if detail.image %}
+        <img src="{{ detail.image.url }}" alt="{{ detail.title }}" />
+      {% endif %}
       <a href="moreInfo/{{ detail.id }}" class="text-blue-500">View more details</a>
-    </h3>
 </div>
 
 {% endfor %}

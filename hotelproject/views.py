@@ -22,7 +22,7 @@ def read_details(request, pk):
 def create_hotels(request):
     new = HotelForm()
     if request.method == "POST":
-        new = HotelForm(request.POST)
+        new = HotelForm(request.POST, request.FILES)
         if new.is_valid():
             new.save()
             return redirect("/")
@@ -35,7 +35,7 @@ def update_details(request, pk):
     update = Details.objects.get(id=pk)
     new = HotelForm(instance=update)
     if request.method == "POST":
-        new = HotelForm(request.POST, instance=update)
+        new = HotelForm(request.POST, instance=update, files=request.FILES)
         if new.is_valid():
             new.save()
             return redirect("/")

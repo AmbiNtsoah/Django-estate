@@ -12,6 +12,9 @@
   <p class="text-gray-900">{{ read.price }} €</p>
   <p class="text-gray-900">{{ read.number_of_bathroom }}</p>
   <p class="text-gray-600 text-sm">{{ read.address }}</p>
+  {% if detail.image %}
+        <img src="{{ detail.image.url }}" alt="{{ detail.title }}" />
+      {% endif %}
 
   {% if request.user.is_staff %}
   <div class="mt-5 py-5 border-t border-gray-200">

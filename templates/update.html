@@ -6,7 +6,7 @@
 <a href="/" class="p-4 text-blue-500">
   Home Page
 </a>
-<form method="post" class="bg-gray-200 p-10 rounded-xl text-black text-1xl">
+<form method="post" enctype="multipart/form-data" class="bg-gray-200 p-10 rounded-xl text-black text-1xl">
   {% csrf_token %}
   {{ new.as_p }}
   <button type="submit" class="mt-5 text-white px-4 py-2 font-medium rounded-full bg-green-400">UPDATE</button>

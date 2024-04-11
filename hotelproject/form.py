@@ -9,4 +9,5 @@ class HotelForm(forms.ModelForm):
             "price",
             "number_of_bathroom",
             "address",
+            "image",
         ]

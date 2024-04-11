@@ -8,6 +8,7 @@ class Details(models.Model):
     price = models.IntegerField()
     number_of_bathroom = models.IntegerField()
     address = models.CharField( max_length = 250 )
+    image = models.ImageField()
 
     def __str__(self):
         return self.title
